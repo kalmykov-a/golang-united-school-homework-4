@@ -39,7 +39,7 @@ func StringSum(input string) (output string, err error) {
 	strArr := strings.Split(str, "+")
 	if len(strArr) == 2 {
 		for _, v := range strArr {
-			num, err := strconv.Atoi(string(v))
+			num, err := strconv.Atoi(v)
 			sum += num
 			if err != nil {
 				return "", fmt.Errorf("Not a number: %w", err)
