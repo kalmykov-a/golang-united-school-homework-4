@@ -33,14 +33,14 @@ func StringSum(input string) (output string, err error) {
 	}
 	// удаляем лишние пробелы
 	sum := 0
-	str := strings.TrimSpace(input)
+	str := strings.ReplaceAll(input, " ", "")
 	strArr := strings.Split(str, "+")
 	if len(strArr) == 2 {
 		for _, v := range strArr {
 			num, err := strconv.Atoi(string(v))
 			sum += num
 			if err != nil {
-				return "", fmt.Errorf("Not a number:, %w", err)
+				return "", fmt.Errorf("Not a number: %w", err)
 			}
 		}
 	} else {
