@@ -44,7 +44,7 @@ func StringSum(input string) (output string, err error) {
 			}
 		}
 	} else {
-		return "", errorEmptyInput
+		return "", errorNotTwoOperands
 	}
 	return strconv.Itoa(sum), nil
 }
