@@ -29,7 +29,7 @@ func StringSum(input string) (output string, err error) {
 
 	//Проверка, что строка не пустая
 	if input == "" {
-		return "", errorEmptyInput
+		return "", fmt.Errorf("Empty string: %w", errorEmptyInput)
 	}
 	// удаляем лишние пробелы
 	sum := 0
@@ -44,7 +44,7 @@ func StringSum(input string) (output string, err error) {
 			}
 		}
 	} else {
-		return "", errorNotTwoOperands
+		return "", fmt.Errorf("Less or more than two operands: %w", errorNotTwoOperands)
 	}
 	return strconv.Itoa(sum), nil
 }
