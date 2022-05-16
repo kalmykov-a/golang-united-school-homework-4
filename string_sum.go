@@ -34,10 +34,8 @@ func StringSum(input string) (output string, err error) {
 	// удаляем лишние пробелы
 	str := strings.ReplaceAll(input, " ", "")
 	// Добавляем оператор + перед каждым минусом не в начале строки
-	str = str[:1] + strings.ReplaceAll(input, "-", "+-")
-	if strings.Contains(str[1:], "-") {
-		str = str[:strings.Index(str[1:], "-")+1] + "+" + str[strings.Index(str[1:], "-")+1:]
-	}
+	str = str[:1] + strings.ReplaceAll(str[1:], "-", "+-")
+	// Разделяем строку по оператору +
 	strArr := strings.Split(str, "+")
 	if len(strArr) == 2 {
 		for _, v := range strArr {
